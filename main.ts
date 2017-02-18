@@ -1,34 +1,15 @@
-interface Animal{
-	nombre:string;
-	hacerRuido();
-}
+///<reference path="animal.ts" />
 
-class Perro implements Animal{
-	nombre:string;
-	constructor(nombre:string){
-		this.nombre=nombre;
-	}
-	hacerRuido(){
-		alert("Guau"+this.nombre);
-	}
-}
 
-class Gato implements Animal{
-	nombre:string;
-	constructor(nombre:string){
-		this.nombre=nombre;
-	}
-	hacerRuido(){
-		alert("Miau"+this.nombre);
-	}
-}
-
-function hablar(animal:Animal){
+function hablar( animal:MySpace.Animal ) {
 	animal.hacerRuido();
 }
 
-var animales :Array<Animal> = new Array<Animal>();
-animales.push(new Perro("Pepe"));
-animales.push(new Gato("Juan"));
 
-animales.forEach(hablar);
+var animales:Array<MySpace.Animal> = new Array<MySpace.Animal>();
+animales.push( new MySpace.Perro( "Pepe" ) );
+animales.push( new MySpace.Gato( "Juan" ) );
+
+
+animales.forEach( hablar );
+
